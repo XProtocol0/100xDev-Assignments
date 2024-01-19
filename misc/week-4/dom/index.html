@@ -1,0 +1,31 @@
+<html>
+    <script>
+        // function debouncePopulateDiv() {
+        //     const timeout = setTimeout(() => {
+        //         populateDiv()
+        //     }, 100);
+        //     clearTimeout(timeout);
+        // }
+        function populateDiv() {
+            const principle = parseInt(document.getElementById("principle").value);
+            const interest = parseInt(document.getElementById("interest").value);
+            const timePeriod = parseInt(document.getElementById("timePeriod").value);
+            const element = document.getElementById("ans");            
+            let ans = principle;
+            for(i=0; i<timePeriod; i++) {
+                ans += principle*(interest/100); 
+            }
+            element.innerHTML = ans;
+        }
+    </script>
+    <body>
+        <input id="principle" type="text" placeholder="Enter principle amount">
+        </input> <br> <br>
+        <input id="interest" type="text" placeholder="Enter interest percentage">
+        </input> <br> <br>
+        <input id="timePeriod" type="text" placeholder="Enter time period">
+        </input> <br> <br>
+        <button onclick="populateDiv()">Calculte simple interest</button><br><br>
+        <div id="ans"></div>
+    </body>
+</html>
