@@ -7,36 +7,16 @@
     let todoState = [];
     let oldTodoState = [];
 
-    function addTodoToDom(todo) {
-      const div = document.createElement('div');
-      div.id = `${todo.id}`;
-      const titleElement = document.createElement('h5');
-      titleElement.innerHTML = todo.title;
-      const descriptionElement = document.createElement('p');
-      descriptionElement.innerHTML = todo.description;
-      const doneElement = document.createElement('button');
-      doneElement.innerHTML = 'Delete Todo';
-      doneElement.addEventListener('click', () => {
-        removeTodoFromDom(todo);
-      })
-      div.appendChild(titleElement)
-      div.appendChild(descriptionElement);
-      div.appendChild(doneElement);
-      const todos = document.getElementById(`todos`);
-      todos.appendChild(div);
+    function addTodoToDom() {
+      
     }
 
     function removeTodoFromDom(todo) {
-      const elementToRemove = document.getElementById(`${todo.id}`);
-      if(elementToRemove) elementToRemove.remove();
+      
     }
 
     function updateTodoInDom(oldTodo, newTodo) {
-        const elementToUpdate = document.getElementById(`${todo.id}`);
-        if(elementToUpdate) {
-          elementToUpdate.children[0].innerHTML = newTodo.title;
-          elementToUpdate.children[1].innerHTML = newTodo.description;
-        }
+        
     }
 
     function updateState(newTodos) {
@@ -45,25 +25,13 @@
       // 1. added
       // 2. deleted
       // 3. updated
-      const added = newTodos.filter((todo) => !oldTodoState.some(
-        (todoIdx) => todoIdx.id === todo.id));
-
-      const deleted = oldTodoState.filter((todo) => !newTodos.some(
-        (todoIdx) => todoIdx.id === todo.id));
-
-      const updated = newTodos.filter((todo) => oldTodoState.some(
-        (oldTodo) => oldTodo.id === todo.id && 
-          (oldTodo.title !== todo.title || oldTodo.description !== todo.description)
-      ));
+      const added = [];
+      const deleted = [];
+      const updated = [];
       // calculate these 3 arrays
       // call addTodo, removeTodo, updateTodo functions on each of the
       // elements
-      console.log(deleted);
-      for(const elem of added) addTodoToDom(elem);
-      for(const elem of deleted) removeTodoFromDom(elem);
-      for(const elem of updated) updateTodoInDom(elem);
-
-      oldTodoState = [...newTodos];
+      oldTodoState = newTodos;
     }
 
     function addTodo() {
