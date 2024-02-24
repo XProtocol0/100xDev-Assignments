@@ -1,0 +1,41 @@
+.login-card{
+  text-align: center;
+  margin-top: 30vh; 
+  margin-left: 30%;
+  margin-right: 30%;
+  border: 1px solid #ffff;
+  border-radius: 20px;
+  padding-top: 10px;
+  padding-bottom: 150px;
+}
+
+
+.otp-input{
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+.phone-input{
+  background-color: #242424;
+  color: #ffff;
+  outline: none;  
+  height: 30px;
+  font-size: 16pt;
+  border: 1px solid #ffff;
+  border-radius: 10px;
+}
+
+.submit-button{
+  margin: 20px;
+  padding: 5px;
+  font-size: 16pt;
+  background-color: #242424;
+  color: #ffff;
+  outline: none;
+  border: 0.5px solid #ffff;
+  border-radius: 5px;
+}
